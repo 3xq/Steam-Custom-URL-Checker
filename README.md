@@ -2,7 +2,7 @@
 Asynchronous bot that checks availability for Steam Custom URLs.
 
 ## Information
-This tool was strictly developed to demonstrate how straightforward it is to develop an ID checker like this. I am surprised Steam currently has no rate limits. Instead of manually searching for IDs, you can automate the process which increases the chances of finding an available OG one due to its incredibly high speed. The bot was even developed asynchronously. Please refrain from using this bot as it was once again developed for educational purposes only. Nevertheless, if you use this, you are doing it at your own risk. You have been warned.
+This tool was strictly developed to demonstrate how straightforward it is to develop an ID checker like this. I am surprised how Steam currently has no rate limits. Instead of manually searching for IDs, you can automate the process which increases the chances of finding an available OG one due to its incredibly high speed. The bot was even developed asynchronously. Please refrain from using this bot as it was once again developed for educational purposes only. Nevertheless, if you use this, you are doing it at your own risk. You have been warned.
 
 Valve is most likely going to add rate limits, and try to patch this; that is also what I am hoping for.
 

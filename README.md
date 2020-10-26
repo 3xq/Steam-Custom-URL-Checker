@@ -22,8 +22,8 @@ pip3 install aiohttp==3.6.2
 ```
 1. Run main.py.
 2. Select a feature — check IDs from Custom.txt or autogenerate while checking.
-3. If you selected the autogenerate feature, choose your settings — e.g. generate letters, digits or both?
+3. If you select the autogenerate feature, choose your settings — e.g. generate letters, digits or both.
 4. All set!
 
 ## Legal Notice
-This is illegal if you use it without the consent of the creators — in this case, the Valve corporation. I am not accountable for any of your actions; this was merely a speedrun to demonstrate how ID checkers work. Please do not misuse this tool.
+This is illegal if you use it without the consent of the creators — in this case, the Valve Corporation. I am not accountable for any of your actions; this was merely a speedrun to demonstrate how ID checkers work. Please do not misuse this tool.

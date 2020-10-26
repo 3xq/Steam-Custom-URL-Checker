@@ -7,7 +7,8 @@ This tool was strictly developed to demonstrate how straightforward it is to dev
 Valve is most likely going to add rate limits, and try to patch this; that is also what I am hoping for.
 
 ## Preview
-![](https://i.imgur.com/l4Mnejr.gif)<br>
+![](https://i.imgur.com/M7yOLXi.gif)<br>
+![](https://i.imgur.com/2vVcOf0.png)<br>
 ![](https://i.imgur.com/8KZ3nTm.png)<br>
 In the screenshot above, we can see that I gave away 2x 3 character IDs. Both were claimed instantly, which shows how desired they are.
 

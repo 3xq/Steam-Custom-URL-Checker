@@ -38,7 +38,7 @@ class SteamChecker:
                     else:
                         print(f'Unavailable --> https://steamcommunity.com/id/{name}')
                         self.checked.append(name)
-        except Exception as e:
+        except Exception:
             print('[!] Connection error')
         else:
             available = len(self.available)

@@ -28,20 +28,19 @@ class SteamChecker:
                     content = await response.text()
                 except UnicodeDecodeError:
                     print(
-                        f'Unavailable --> https://steamcommunity.com/id/{name} [POSSIBLY INACCURATE'
-                        ']'
+                        f' Unavailable | https://steamcommunity.com/id/{name} [POSSIBLY INACCURATE]'
                     )
                     self.checked.append(name)
                 else:
                     if 'could not be found' in content and len(name) > 2:
-                        print(f'Available --> https://steamcommunity.com/id/{name}')
+                        print(f' Available | https://steamcommunity.com/id/{name}')
                         self.available.append(name)
                         self.checked.append(name)
                     else:
-                        print(f'Unavailable --> https://steamcommunity.com/id/{name}')
+                        print(f' Unavailable | https://steamcommunity.com/id/{name}')
                         self.checked.append(name)
         except Exception:
-            print(f'[!] Connection error | skipping @{name}...')
+            print(f' Connection error | skipping @{name}...')
         else:
             available = len(self.available)
             unavailable = len(self.checked) - len(self.available)

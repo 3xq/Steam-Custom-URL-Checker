@@ -1,14 +1,16 @@
-from aiohttp import ClientSession, ClientTimeout
 import asyncio
 import os
 import random
+from time import time, strftime, gmtime
+
+from aiohttp import ClientSession, ClientTimeout
 
 
 class SteamChecker:
     def __init__(self):
         self.checked = []
         self.available = []
-        self.timeout = ClientTimeout(total=10_000)
+        self.timeout = ClientTimeout(total=15_000)
 
     def _save(self):
         with open('Available.txt', 'a+') as f:
@@ -43,9 +45,22 @@ class SteamChecker:
         else:
             available = len(self.available)
             unavailable = len(self.checked) - len(self.available)
+            time_elapsed = strftime('%H:%M:%S', gmtime(time() - self.start_time))
+
+            try:
+                # (Elapsed Time / Checked) * Remaining
+                time_remaining = strftime('%H:%M:%S', gmtime(
+                    (time() - self.start_time) / len(self.checked) * (
+                        self.total_amount - len(self.checked)
+                    )
+                ))
+            except ZeroDivisionError:
+                time_remaining = '...'
+
             os.system(
                 f'title [Steam Custom URL Checker] - Checked: {available + unavailable}/'
-                f'{self.total_amount} ^| Available: {available} ^| Unavailable: {unavailable}'
+                f'{self.total_amount} ^| Available: {available} ^| Unavailable: {unavailable} ^| Ti'
+                f'me Elapsed: {time_elapsed} ^| Estimated Time Remaining: {time_remaining}'
             )
 
     async def generate(self):
@@ -85,6 +100,7 @@ class SteamChecker:
                     for _ in range(self.total_amount)
                 ]
                 print()
+                self.start_time = time()
                 async with ClientSession() as s:
                     await asyncio.gather(*[self._check(s, i) for i in names])
 
@@ -99,6 +115,7 @@ class SteamChecker:
             self.total_amount = len(names)
             if self.total_amount:
                 print()
+                self.start_time = time()
                 async with ClientSession() as s:
                     await asyncio.gather(*[self._check(s, i) for i in names])
 
